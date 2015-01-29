@@ -16,11 +16,11 @@ en:
       spree/slide: "Slide"
 
   spree_slider:
-    config_name: "Spree Slider"
-    config_description: "Manage Spree Slider contents"
+    config_name: "Slide Show"
+    config_description: "Manage Slide Show contents"
     title: "Slides"
     new_slide: "New Slide"
     editing_slide: "Editing Slide"
     placeholder_name: "Leave blank to use product name"
     placeholder_link_url: "Leave blank to use product url"
-    image_tip: "Default first product image"
+    image_tip: "Default is first product image"
