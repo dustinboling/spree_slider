@@ -1,11 +1,12 @@
 class Spree::Slide < ActiveRecord::Base
 
   has_attached_file :image,
+                    storage: :s3,
                     styles: { small: '100x100>', large: '940x890>' },
-                      default_style: :large,
-                      url: '/spree/slides/:id/:style/:basename.:extension',
-                      path: ':rails_root/public/spree/slides/:id/:style/:basename.:extension',
-                      convert_options: { all: '-strip -auto-orient -colorspace sRGB' }
+                    default_style: :large,
+                    path: '/spree/slides/:id/:style/:basename.:extension',
+                    url: ':s3_path_url',
+                    convert_options: { all: '-strip -auto-orient -colorspace sRGB' }
 
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
   scope :published, -> { where(published: true).order('position ASC') }
