@@ -12,7 +12,7 @@ class Spree::Slide < ActiveRecord::Base
                     convert_options: {
                       all: '-strip -auto-orient -colorspace sRGB',
                       :small => "-gravity north -thumbnail 150x150^ -extent 150x150",
-                      :large => "-gravity north -thumbnail 940x890^ -extent 940x700"
+                      :large => "-gravity north -thumbnail 940x800^ -extent 940x800"
                     }
 
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
